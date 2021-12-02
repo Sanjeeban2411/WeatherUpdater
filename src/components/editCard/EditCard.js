@@ -4,12 +4,14 @@ import Styles from "./editcards.module.css";
 export default function EditCard({ hideAdderCard, list, setlist,setEditCard,index }) {
   const [text, setText] = useState("");
 
-  // const updateCard = () => {
+  const updateCard = () => {
     // setlist([...list, text]);
-    // console.log(list)
-    // setlist(list.splice(index,0,text));
+    let newArr = list.splice(index,1,text);
+    console.log(index)
+    console.log(text)
+    console.log(newArr)
     // hideAdderCard();
-  // };
+  };
   return (
     <div className={Styles.card}>
       <div className={Styles.nameHolder}>
@@ -23,12 +25,7 @@ export default function EditCard({ hideAdderCard, list, setlist,setEditCard,inde
         />
       </div>
       <div className={Styles.buttonCtn}>
-        <button type="submit" onClick={()=>{
-          console.log(text)
-          console.log(list)
-          console.log(index)
-          list.splice(index,1,text)
-        }}>
+        <button type="submit" onClick={() => {updateCard()}}>
           Update
         </button>
         <button  onClick={() => {setEditCard(false)}}>
