@@ -1,0 +1,78 @@
+.card{
+    background-color:rgba(180, 180, 180, 0.329);
+    /* background-image:url("../../assests/drizzle.jpg"); */
+    
+    background-size: cover;
+    width: 180px;
+    height:320px;
+    border-radius: 15px;
+    /* color: white; */
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    align-items: center;
+    margin: 20px 40px;
+}
+.place{
+    /* background-color:blanchedalmond; */
+    background-color:rgba(0, 0, 0, 0.65);
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 2px 20px;
+    color: white;
+}
+.hr{
+    width: 85%;
+    border-top: 2px solid rgb(0, 0, 0);
+    height: 0;
+    margin-top:2px;
+    justify-self: center;
+}
+.condition{
+    /* background-color:rgba(204, 195, 183, 0.404); */
+    font-size: 25px;
+    padding: 2px 20px;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+.temp{
+    font-size:20px
+}
+.currentTemp{
+    font-weight: bold;
+    font-size:24px
+}
+.maxminTemp{
+    display:flex;
+    flex-direction: row;
+    margin: 8px 2px 5px;
+}
+.maxTemp,.minTemp{
+    border: 1px solid black;
+    padding: 5px;
+}
+.bottom{
+    font-size:14px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hum{
+    margin:10px 0px 0px 0px;
+    left:100px
+}
+.pressure{
+    margin:3px 0px 0px 0px;
+    left:0px
+}
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-items: space-between;
+}
+.button{
+    margin: 20px;
+    width: 60px;
+    height: 25px
+}
