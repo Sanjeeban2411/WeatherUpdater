@@ -7,6 +7,7 @@ export default function Newcard({ hideAdderCard, list, setlist }) {
   const createCard = () => {
     setlist([...list, text]);
     hideAdderCard();
+    // console.log(list)
   };
   return (
     <div className={Styles.card}>

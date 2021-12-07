@@ -4,7 +4,7 @@
     
     background-size: cover;
     width: 180px;
-    height:270px;
+    height:320px;
     border-radius: 15px;
     color: white;
     padding:20px;
@@ -14,9 +14,24 @@
     align-items: center;
     justify-content:center;
     margin: 20px 40px;
+    
+}
+.sub1{
+    width: 180px;
+    height:160px;
+    border-radius: 15px 15px 0px 0px;
+    border:2px solid white;
+    color:white;
 
 }
+.sub2{
+    width: 180px;
+    height:160px;
+    border-radius:0px 0px 15px 15px ;
+    border:2px solid white;
+    color:white
+}
 .plus{
-   font-size:100px;
-   padding-bottom: 20px;
+   font-size:24px;
+   padding:35px
 }

@@ -8,7 +8,9 @@ import Styles from "./Cards.module.css";
 export default function Cards({
   location,
   list,
-  setlist
+  setlist,
+  hiden,
+  sethiden
 
 }) {
 //   console.log(location);
@@ -34,7 +36,7 @@ export default function Cards({
   };
 
   const update = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=49f6e460176d020718c480901f82ab3f`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=6eecfae001b39341e859e0d51629ec7b`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setCondition(parsedData.weather[0].main);
@@ -58,6 +60,7 @@ export default function Cards({
       return e !== location;
     });
     setlist(newArr);
+    // console.log(newArr)
   };
 
   const updateCard =() => {
@@ -66,8 +69,16 @@ export default function Cards({
     console.log(location)
     console.log(list.indexOf(location))
     setEditCard(true);
-
   };
+
+  const hideCard = async() =>{
+    let hide = list.filter((e) => {
+      return e === location;
+    });
+    await sethiden([...hiden, hide[0]])
+    removeCard()
+  }
+  // console.log(hiden)
 
   const editPresentCard = () =>{
     let newArr = list.splice(list.indexOf(location),1,text);
@@ -111,6 +122,9 @@ export default function Cards({
           <div className={Styles.buttons}>
             <button className={Styles.button} onClick={updateCard}>
               Edit
+            </button>
+            <button className={Styles.button} onClick={hideCard}>
+              Hide
             </button>
             <button className={Styles.button} onClick={removeCard}>
               Delete
