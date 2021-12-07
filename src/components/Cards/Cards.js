@@ -36,7 +36,7 @@ export default function Cards({
   };
 
   const update = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=6eecfae001b39341e859e0d51629ec7b`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=49f6e460176d020718c480901f82ab3f`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setCondition(parsedData.weather[0].main);

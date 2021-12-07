@@ -11,24 +11,35 @@ export default function Newcard({ hideAdderCard, list, setlist }) {
   };
   return (
     <div className={Styles.card}>
-      <div className={Styles.nameHolder}>
-        <input
-          type="text"
-          className={Styles.input}
-          placeholder="Place"
-          onChange={(e) => {
-            setText(e.target.value);
+      {/* <form action="submit"> */}
+        <div className={Styles.nameHolder}>
+          <input
+            type="text"
+            className={Styles.input}
+            placeholder="Place"
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+          />
+        </div>
+        <div className={Styles.buttonCtn}>
+        <button
+          type="submit"
+          onClick={() => {
+            createCard();
           }}
-        />
-      </div>
-      <div className={Styles.buttonCtn}>
-        <button type="submit" onClick={() => {createCard()}}>
+        >
           Submit
         </button>
-        <button  onClick={() => {hideAdderCard()}}>
-          Cancel
-        </button>
+      <button
+        onClick={() => {
+          hideAdderCard();
+        }}
+        >
+        Cancel
+      </button>
+        {/* </form> */}
       </div>
     </div>
-    )
+  );
 }
