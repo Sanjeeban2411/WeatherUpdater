@@ -5,20 +5,9 @@ import Styles from "./Cards.module.css";
 // import mist from '../../assests/mist.jpg'
 // import rain from '../../assests/rain.jpg'
 
-export default function Cards({
-  location,
-  list,
-  setlist,
-  hiden,
-  sethiden
-
-}) {
-//   console.log(location);
-
-//   const [index, setindex] = useState();
+export default function Cards({ location, list, setlist, hiden, sethiden }) {
   const [editCard, setEditCard] = useState(false);
   const [text, setText] = useState("");
-
 
   const [condition, setCondition] = useState("");
   const [temp, setTemp] = useState();
@@ -47,8 +36,6 @@ export default function Cards({
     setTempfeelslike((propertyValues[1] - 273.15).toFixed(2));
     setPressure(propertyValues[4]);
     setHumidity(propertyValues[5]);
-
-    // console.log(url);
   };
 
   useEffect(() => {
@@ -60,44 +47,35 @@ export default function Cards({
       return e !== location;
     });
     setlist(newArr);
-    // console.log(newArr)
   };
 
-  const updateCard =() => {
-    // setindex(list.indexOf(location));
-    console.log(list)
-    console.log(location)
-    console.log(list.indexOf(location))
+  const updateCard = () => {
     setEditCard(true);
   };
 
-  const hideCard = async() =>{
+  const hideCard = async () => {
     let hide = list.filter((e) => {
       return e === location;
     });
-    await sethiden([...hiden, hide[0]])
-    removeCard()
-  }
-  // console.log(hiden)
+    await sethiden([...hiden, hide[0]]);
+    removeCard();
+  };
 
-  const editPresentCard = () =>{
-    let newArr = list.splice(list.indexOf(location),1,text);
-    // setlist(newArr)
-
+  const editPresentCard = () => {
+    let newArr = list.splice(list.indexOf(location), 1, text);
+    // console.log(newArr)
     newArr = list.filter((e) => {
-        return e !== newArr[0];
+      return e !== newArr[0];
     });
+    // console.log(newArr)
     setlist(newArr);
-
-    console.log(text)
-    console.log(newArr)
-  }
+  };
 
   return (
-    <div >
+    <div>
       {!editCard ? (
         <div className={Styles.card}>
-          <div className={Styles.place}>{UpHandle()}</div>
+          <div className={Styles.place}><b>{UpHandle()}</b></div>
           <div className={Styles.hr} />
           <div className={Styles.condition}>{condition}</div>
           <div className={Styles.temp}>
@@ -112,7 +90,7 @@ export default function Cards({
               </div>
             </div>
             <div className={Styles.feelsTemp}>
-              Feels Like :       {tempfeelslike} &deg;C
+              Feels Like : {tempfeelslike} &deg;C
             </div>
             <div className={Styles.bottom}>
               <p className={Styles.hum}>Humidity : {humidity}</p>

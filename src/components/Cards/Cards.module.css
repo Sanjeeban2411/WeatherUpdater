@@ -1,6 +1,6 @@
 .card{
     background-color:rgba(13, 7, 71, 0.329);
-    background-image: linear-gradient(rgb(230, 227, 255),rgba(17, 17, 17, 0.425));
+    background: linear-gradient(to top, #000000, #707070);
     /* background-image:url("../../assests/drizzle.jpg"); */
     
     background-size: cover;
@@ -15,21 +15,23 @@
     align-items: center;
     justify-items: center;
     margin: 20px 40px;
+    color: white;
 }
 .card:hover{
     box-shadow: 10px 20px 15px rgba(17, 17, 17, 0.3);
 }
 .place{
     /* background-color:blanchedalmond; */
-    background-color:rgba(0, 0, 0, 0.65);
+    background-color:rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     font-size: 30px;
+    font-weight:bold;
     padding: 2px 20px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .hr{
     width: 85%;
-    border-top: 2px solid rgb(0, 0, 0);
+    border-top: 2px solid rgb(255, 255, 255);
     height: 0;
     margin-top:2px;
     justify-self: center;
@@ -54,7 +56,7 @@
     margin: 8px 2px 5px;
 }
 .maxTemp,.minTemp{
-    border: 1px solid black;
+    border: 1px solid rgb(158, 158, 158);
     padding: 5px;
 }
 .bottom{
@@ -82,8 +84,10 @@
     width: 60px;
     height: 25px;
     border-radius: 10px;
-    border: 1px solid white;
-    background-color: rgb(60, 57, 87);
+    /* border: 1px solid white; */
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow:1px 1px rgb(177, 177, 177);
     color:white
 }
 

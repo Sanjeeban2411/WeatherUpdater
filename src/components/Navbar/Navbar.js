@@ -4,9 +4,12 @@ import Styles from './Navbar.module.css'
 
 export default function Navbar(props) {
     const [place, setPlace] = useState("Search");
+    const mainlist = props.list;
+    let searchbox;
     const onChangeEvent = (event)=>{
-        // console.log(event.target.value);
+        // searchbox =event.target.value;
         setPlace(event.target.value);
+        // console.log(searchbox)
     }
     const search =(e)=>{
         // let result = props.list.indexOf(place)
@@ -14,17 +17,20 @@ export default function Navbar(props) {
         // console.log(props.list)
         // console.log(props.list.indexOf(place))
         if(props.list.find((e)=>{return e===place})){
-            props.setlist([place])
+            let newArr = props.list.filter((e) => {
+                return e === place;
+            });
+            props.setlist(newArr)
+            console.log(newArr)
         }
         else{
-            
+            props.setlist(mainlist)
         }
     }
 
     const unhide =()=>{
         let newArr = props.list.concat(props.hiden);
         props.setlist(newArr)
-        // console.log(newArr)
     }
     return (
         <div className={Styles.container}>
