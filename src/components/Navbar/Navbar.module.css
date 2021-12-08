@@ -6,6 +6,7 @@
     justify-content:space-between;
     /* margin:0px 50px 0px 50px */
     margin-bottom: 30px;
+    height: 12vh;
 }
 .logo{
     margin-left: 30px;
@@ -18,13 +19,27 @@
     align-items: center;
 }
 .input{
-    height: 40%;
+    height: 5vh;
     width: 30vw;
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(61, 61, 61);
     border: none;
+    outline: none;
     color: white;
+    border-radius: 50px 0px 0px 50px;
+    padding-left: 20px;
 }
 .search{
-    height: 40%;
+    height: 5vh;
     width: 5vw;
+    border-radius: 0px 50px 50px 0px;
+    border:none
+}
+.unhide{
+    height: 5vh;
+    width: 5vw;
+    margin-left: 15px;
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: rgb(63, 64, 124);
+    color: white;
 }
