@@ -11,8 +11,8 @@ export default function Navbar(props) {
     const search =(e)=>{
         // let result = props.list.indexOf(place)
         e.preventDefault();
-        console.log(props.list)
-        console.log(props.list.indexOf(place))
+        // console.log(props.list)
+        // console.log(props.list.indexOf(place))
         if(props.list.find((e)=>{return e===place})){
             props.setlist([place])
         }
@@ -37,7 +37,7 @@ export default function Navbar(props) {
                 <input className={Styles.input} type="text" placeholder="Search. . ." onChange={onChangeEvent}/>
                 <button className={Styles.search} onClick={search}>Search</button>
                 </form>
-                <button onClick={unhide}>Unhide </button>
+                <button className={Styles.unhide} onClick={unhide}>Unhide </button>
                 {/* <SearchField 
                 placeholder={place}
                 onChange={onChangeEvent}
