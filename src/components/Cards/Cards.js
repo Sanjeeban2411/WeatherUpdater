@@ -94,9 +94,9 @@ export default function Cards({
   }
 
   return (
-    <div className={Styles.card}>
+    <div >
       {!editCard ? (
-        <div>
+        <div className={Styles.card}>
           <div className={Styles.place}>{UpHandle()}</div>
           <div className={Styles.hr} />
           <div className={Styles.condition}>{condition}</div>
@@ -112,11 +112,11 @@ export default function Cards({
               </div>
             </div>
             <div className={Styles.feelsTemp}>
-              Feels Like :{tempfeelslike} &deg;C
+              Feels Like :       {tempfeelslike} &deg;C
             </div>
             <div className={Styles.bottom}>
-              <p className={Styles.hum}>Humidity: {humidity}</p>
-              <p className={Styles.pressure}>Pressure: {pressure}</p>
+              <p className={Styles.hum}>Humidity : {humidity}</p>
+              <p className={Styles.pressure}>Pressure : {pressure}</p>
             </div>
           </div>
           <div className={Styles.buttons}>
@@ -132,12 +132,12 @@ export default function Cards({
           </div>
         </div>
       ) : (
-        <div>
+        <div className={Styles.editcont}>
           <div className={Styles.nameHolder}>
             <input
               type="text"
               className={Styles.input}
-              placeholder="Place"
+              placeholder="New location"
               onChange={(e) => {
                 setText(e.target.value);
               }}
@@ -146,6 +146,7 @@ export default function Cards({
           <div className={Styles.buttonCtn}>
             <button
               type="submit"
+              className={Styles.button1}
               onClick={() => {
                 editPresentCard();
               }}
@@ -153,6 +154,7 @@ export default function Cards({
               Update
             </button>
             <button
+              className={Styles.button2}
               onClick={() => {
                 setEditCard(false);
               }}
