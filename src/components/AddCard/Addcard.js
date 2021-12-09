@@ -6,7 +6,7 @@ import Styles from './Addcards.module.css'
 export default function Addcards(props) {
     const {showAdderCard, resetCard}=props;
     return (
-        <div className={Styles.card} onClick={()=>{showAdderCard()}}>
+        <div className={Styles.card}>
             <div className={Styles.sub1} onClick={()=>{showAdderCard()}}>
             {/* <BsFillPatchPlusFill value={{ className: 'Styles.icons' }}/> */}
             <h3 className={Styles.plus}>ADD</h3>

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./Cards.module.css";
-// import sunny from '../../assests/sunny.jpg'
-// import drizzle from '../../assests/drizzle.jpg'
-// import mist from '../../assests/mist.jpg'
-// import rain from '../../assests/rain.jpg'
+import sunny from '../../assests/sunny.jpg'
+import haze from '../../assests/haze.jpg'
+import drizzle from '../../assests/drizzle.jpg'
+import mist from '../../assests/mist.jpg'
+import rain from '../../assests/rain.jpg'
+import smoke from '../../assests/smoke.jpg'
+import clouds from '../../assests/clouds.jpg'
+import clear from '../../assests/clear.jpg'
+import other from '../../assests/other.jpg'
 
 export default function Cards({ location, list, setlist, hiden, sethiden }) {
   const [editCard, setEditCard] = useState(false);
@@ -71,10 +76,61 @@ export default function Cards({ location, list, setlist, hiden, sethiden }) {
     setlist(newArr);
   };
 
+  var bgimage = ()=>{
+    if(condition==="Sunny"){
+      return sunny
+    }
+    else if(condition ==="Haze"){
+      return haze
+    }
+    else if(condition ==="Rain"){
+      return rain
+    }
+    else if(condition ==="Drizzle"){
+      return drizzle
+    }
+    else if(condition ==="Mist"){
+      return mist
+    }
+    else if(condition ==="Smoke"){
+      return smoke
+    }
+    else if(condition ==="Clouds"){
+      return clouds
+    }
+    else if(condition ==="Clear"){
+      return clear
+    }
+    else{
+      return other
+    }
+  }
+
+  var sectionStyle = {
+    backgroundImage:`url(${bgimage()})`,
+    // backgroundImage:'linear-gradient(rgba(223, 223, 223, 0.3)',
+    // background: 'linear-gradient(to top, #000000, #707070)',
+    backgroundSize: 'cover',
+    width: '180px',
+    height:'320px',
+    borderRadius: '15px',
+    /* color: white; */
+    padding:'20px',
+    display:'flex',
+    flexDirection:' column',
+    textAlign:'center',
+    alignItems: 'center',
+    justifyItems: 'center',
+    margin: '20px 40px',
+    color: 'black'
+  };
+
   return (
     <div>
       {!editCard ? (
-        <div className={Styles.card}>
+        <div 
+        // className={Styles.card} 
+        style={sectionStyle}>
           <div className={Styles.place}><b>{UpHandle()}</b></div>
           <div className={Styles.hr} />
           <div className={Styles.condition}>{condition}</div>
