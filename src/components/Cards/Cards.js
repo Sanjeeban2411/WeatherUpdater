@@ -8,7 +8,7 @@ import rain from '../../assests/rain.jpg'
 import smoke from '../../assests/smoke.jpg'
 import clouds from '../../assests/clouds.jpg'
 import clear from '../../assests/clear.jpg'
-import other from '../../assests/other.jpg'
+import other from '../../assests/other.svg'
 
 export default function Cards({ location, list, setlist, hiden, sethiden }) {
   const [editCard, setEditCard] = useState(false);
